@@ -3,6 +3,9 @@ import CallsTasksByHazel from '../services/CallsTasksByHazel';
 import '../styles/TasksCounterByHazel.css'
 
 function TasksCounterByHazel() {
+
+  //logica va aqui
+  
   return (
     <div className='TaskCounterContainer'>
         <div className='CircleContainer'>
