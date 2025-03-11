@@ -4,7 +4,7 @@
       "id": "89b7",
       "nombreDeUsuario": "Hazel12345",
       "email": "Hazel12345@gmail.com",
-      "password": "Hazel12345_"
+      "password": "Hazel12345"
     },
     {
       "id": "a90a",
@@ -21,18 +21,42 @@
   ],
   "tasks": [
     {
-      "usuarioDeTarea": "abra",
-      "tarea": "ftuft",
-      "estado": "completa",
-      "id": "5476"
-    },
-    {
-      "id": "08aa",
+      "id": "d52b",
       "usuarioDeTarea": "a90a",
-      "tarea": "abc",
+      "tarea": "como",
       "estado": "pendiente",
       "idUsuario": "a90a",
       "nombreUsuario": "Pame6789"
+    },
+    {
+      "usuarioDeTarea": "a90a",
+      "tarea": "estas",
+      "estado": "completa",
+      "id": "25f8"
+    },
+    {
+      "id": "e651",
+      "usuarioDeTarea": "89b7",
+      "tarea": "fyjtf",
+      "estado": "pendiente",
+      "idUsuario": "89b7",
+      "nombreUsuario": "Hazel12345"
+    },
+    {
+      "id": "dba1",
+      "usuarioDeTarea": "89b7",
+      "tarea": "ftvgc",
+      "estado": "pendiente",
+      "idUsuario": "89b7",
+      "nombreUsuario": "Hazel12345"
+    },
+    {
+      "id": "5d51",
+      "usuarioDeTarea": "89b7",
+      "tarea": "d dvf",
+      "estado": "pendiente",
+      "idUsuario": "89b7",
+      "nombreUsuario": "Hazel12345"
     }
   ]
 }

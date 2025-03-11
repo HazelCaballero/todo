@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import CallsUsersByHAzel from "../services/CallsUsersByHazel";
 import Swal from "sweetalert2";
-import { UserContext } from "../contexts/userContext.jsx"; // Aquí estoy importando el contexto para manejar el usuario actual.
 
 function LoginToDoApp() {
   // Configuré los estados locales para manejar los datos del usuario y la lista de usuarios.
@@ -10,8 +9,7 @@ function LoginToDoApp() {
   const [passwordUser, SetPasswordUser] = useState(""); // Guarda la contraseña ingresada.
   const [usuarios, SetUsuarios] = useState([]); // Contiene la lista de usuarios obtenidos de la API.
   const navigate = useNavigate(); // Me permite navegar entre páginas programáticamente.
-  const { setCurrentUser } = useContext(UserContext); // Utilizo el contexto para establecer el usuario que se conectará.
-
+  
   // Aquí implementé el useEffect para obtener la lista de usuarios al montar el componente.
   useEffect(() => {
     async function fetchDataUsers() {
@@ -65,7 +63,7 @@ function LoginToDoApp() {
       });
     } else {
       // Si el usuario se encuentra, guardo su nombre en el contexto para usarlo en otras partes de la app.
-      setCurrentUser(found.nombreDeUsuario);
+      found.nombreDeUsuario;
       localStorage.setItem("idUsuario",found.id)
       localStorage.setItem("nombreUsuario",found.nombreDeUsuario)
       Swal.fire({

@@ -19,6 +19,7 @@ function TaskItemByHazel({ tasks, setTasks }) {
       setTasks((prevTasks) =>
         prevTasks.map((t) => (t.id === task.id ? updatedTask : t))
       );
+
     } catch (error) {
       // Si algo falla, muestro un mensaje de error con SweetAlert.
       Swal.fire({
@@ -103,17 +104,25 @@ function TaskItemByHazel({ tasks, setTasks }) {
     }
   }
 
+ 
+  const porUsario = tasks.filter(task => task.usuarioDeTarea === localStorage.getItem("idUsuario"))
+
+  console.log(porUsario);
+  
   return (
     <div className="TaskItemContainer">
       {/* Verifico si hay tareas en la lista */}
-      {tasks.length > 0 ? (
+      {
+      porUsario.length >= 0 ? (
+        porUsario.map((task)=>{
+          return(
         // Recorro la lista de tareas para mostrar cada una.
-        tasks.map((task) => (
           <div className="TaskItem" key={task.id}>
+           <p>{task.tarea}</p>
             {/* Checkbox para cambiar el estado de la tarea */}
             <input
               type="checkbox"
-              checked={task.estado === "completa"} // Marcado si la tarea está completa.
+              checked={tasks.estado === "completa"} // Marcado si la tarea está completa.
               onChange={() => toggleTaskCompletion(task)} // Cambia el estado al hacer clic.
             />
             {/* Nombre de la tarea con estilo según su estado */}
@@ -123,11 +132,14 @@ function TaskItemByHazel({ tasks, setTasks }) {
             {/* Botón para eliminar la tarea */}
             <button onClick={() => deleteTask(task.id)}>Eliminar</button>
           </div>
-        ))
-      ) : (
-        // Si no hay tareas, muestro un mensaje.
-        <p>No tienes tareas pendientes. ¡Crea una nueva tarea!</p>
-      )}
+          )
+      })
+        )
+        : (
+          // Si no hay tareas, muestro un mensaje.
+          <p>No tienes tareas pendientes. ¡Crea una nueva tarea!</p>
+        )
+      }
     </div>
   );
 }
