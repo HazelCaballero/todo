@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import CallsUsersByHAzel from "../services/CallsUsersByHazel"; // Importo el servicio que me permitirá guardar los datos del usuario.
+import "../styles/RegisterToDoApp.css"
 
 // Esta función valida las entradas del formulario. Me aseguré de definir tres expresiones regulares
 // para validar cada campo según criterios específicos.
@@ -88,29 +89,34 @@ function RegisterToDoApp() {
     }
   }
 
+
+
   return (
     <div className="RegisterToDoContainer">
-      <h2>Registro</h2>
+      <h2 className="loginRegTitle">Registro</h2>
       {/* Aquí está el formulario de registro que maneja la función handleRegister */}
       <form onSubmit={handleRegister}>
-        <label>Nombre de Usuario</label>
+        <label className="labelRegStyle">Usuario</label> <br />
         <input
+        className="inputRegStyle"
           value={userNombre} // El valor está enlazado al estado userNombre.
           onChange={(e) => setUserNombre(e.target.value)} // Actualizo el estado al escribir en el campo.
           type="text"
           placeholder="Escribe tu nombre"
         />
         <br />
-        <label>Email</label>
+        <label className="labelRegStyle">Email</label> <br />
         <input
+        className="inputRegStyle"
           value={email} // Enlazo este campo con el estado email.
           onChange={(e) => setEmail(e.target.value)} // Actualizo email al escribir.
           type="email"
           placeholder="Escribe tu correo"
         />
         <br />
-        <label>Contraseña</label>
+        <label className="labelRegStyle">Contraseña</label> <br />
         <input
+          className="inputRegStyle"
           value={passwordUser} // Este campo está enlazado al estado passwordUser.
           onChange={(e) => setPasswordUser(e.target.value)} // Actualizo la contraseña conforme se escribe.
           type="password"
@@ -118,7 +124,7 @@ function RegisterToDoApp() {
         />
         <br />
         {/* El botón se desactiva si isSubmitting es true, para evitar envíos múltiples */}
-        <button type="submit" disabled={isSubmitting}>
+        <button className="btnAddRegStyle" type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Registrando..." : "Registrar"} {/* Cambio el texto según el estado */}
         </button>
       </form>

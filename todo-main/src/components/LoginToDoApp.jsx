@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import CallsUsersByHAzel from "../services/CallsUsersByHazel";
 import Swal from "sweetalert2";
+import "../styles/LoginToDoApp.css"
 
 function LoginToDoApp() {
   // Configuré los estados locales para manejar los datos del usuario y la lista de usuarios.
@@ -83,24 +84,27 @@ function LoginToDoApp() {
   // Aquí está el diseño básico del formulario de login.
   return (
     <div className="LoginToDoContainer">
-      <label>Usuario</label>
+      <h2 className="loginLogTitle">Login</h2> 
+      <label className="labelLogStyle">Usuario</label> <br />
       {/* Este input está enlazado al estado userNombre. Actualizo el estado con el evento onChange. */}
       <input
+      className="inputLogStyle"
         value={userNombre}
         onChange={(e) => SetuserNombre(e.target.value)}
         type="text"
         placeholder="Ingresa tu usuario"
-      />
-      <label>Contraseña</label>
+      /> <br />
+      <label className="labelLogStyle">Contraseña</label> <br />
       {/* Este input está enlazado al estado passwordUser. También se actualiza con onChange. */}
       <input
+      className="inputLogStyle"
         value={passwordUser}
         onChange={(e) => SetPasswordUser(e.target.value)}
         type="password"
         placeholder="Ingresa tu contraseña"
-      />
+      /> <br />
       {/* Este botón activa la función authenticate al hacer clic. */}
-      <button onClick={authenticate}>Iniciar</button>
+      <button className="btnAddLogStyle" onClick={authenticate}>Iniciar</button>
     </div>
   );
 }

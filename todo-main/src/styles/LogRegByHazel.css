@@ -1,0 +1,12 @@
+.LogRegContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: rgb(212, 253, 245);
+    padding-bottom: 40px;
+    margin-top: 40px;
+    border-radius: 75px;
+}
+body{
+    background-color: rgb(55, 78, 73);
+}

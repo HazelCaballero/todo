@@ -1,0 +1,77 @@
+.loginLogTitle{
+    font-size: 50px;
+    
+    }
+    
+    .labelLogStyle{
+        font-size: 30px;
+    }
+    
+    .inputLogStyle{
+        text-align: center;
+        font-size: 20px;
+        margin: 5px;
+    }
+    
+    .inputLogStyle:hover{
+        background-color: rgb(212, 253, 245);
+    }
+    
+    .inputLogStyle::placeholder{
+    font-size: 17px;
+    }
+    
+    .btnAddLogStyle{
+        font-size: 15px;
+        margin: 5px;
+        padding: 5px;
+    }
+    
+    .btnAddLogStyle:hover{
+        background-color: rgb(212, 253, 245);
+    }
+
+    .LoginToDoContainer{
+        background-color: aquamarine;
+        width: 350px;
+        position: relative;
+        left: 60px;
+        padding: 1px 0px;
+        margin-top: 40px;
+        border-radius: 5%;
+      }
+    
+    @media only screen and (max-width: 768px) and (orientation: portrait) {
+        /* Estilos para pantallas en orientación vertical */
+        .loginLogTitle{
+            font-size: 35px;
+            }
+            
+            .labelLogStyle{
+                font-size: 25px;
+            }
+            
+            .inputLogStyle{
+                text-align: center;
+                font-size: 20px;
+                margin: 3px;
+                
+            }
+            
+            .inputLogStyle:hover{
+                background-color: rgb(212, 253, 245);
+            }
+            
+            .inputLogStyle::placeholder{
+                font-size: 17px;
+            }
+            
+            .btnAddLogStyle{
+                font-size: 15px;
+                margin: 3px;
+            }
+            
+            .btnAddLogStyle:hover{
+                background-color: rgb(212, 253, 245);
+            }
+      }

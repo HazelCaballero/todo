@@ -1,0 +1,79 @@
+.loginRegTitle{
+    font-size: 50px;
+    position: relative;
+    top: 20px;
+}
+
+.labelRegStyle{
+    font-size: 30px;
+}
+
+.inputRegStyle{
+    text-align: center;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.inputRegStyle:hover{
+    background-color: rgb(212, 253, 245);
+}
+
+.inputRegStyle::placeholder{
+    font-size: 17px;
+}
+
+.btnAddRegStyle{
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.btnAddRegStyle:hover{
+    background-color: rgb(212, 253, 245);
+}
+
+.RegisterToDoContainer{
+    background-color: aquamarine;
+    width: 350px;
+    justify-content: center;
+    justify-items: center;
+    position: relative;
+    left: 180px;
+    border-radius: 5%;
+  }
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    /* Estilos para pantallas en orientación vertical */
+    .loginRegTitle{
+        font-size: 35px;
+    }
+    
+    .labelRegStyle{
+        font-size: 25px;
+    }
+    
+    .inputRegStyle{
+        text-align: center;
+        font-size: 20px;
+        margin: 3px;
+    }
+    
+    .inputRegStyle:hover{
+        background-color: rgb(212, 253, 245);
+    }
+    
+    .inputRegStyle::placeholder{
+        font-size: 17px;
+    }
+    
+    .btnAddRegStyle{
+        font-size: 15px;
+        margin: 3px;
+    }
+    
+    .btnAddRegStyle:hover{
+        background-color: rgb(212, 253, 245);
+    }
+  }
+
+  
