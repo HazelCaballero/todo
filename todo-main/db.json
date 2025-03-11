@@ -57,6 +57,14 @@
       "estado": "pendiente",
       "idUsuario": "89b7",
       "nombreUsuario": "Hazel12345"
+    },
+    {
+      "id": "63bb",
+      "usuarioDeTarea": "8acb",
+      "tarea": "ewf",
+      "estado": "pendiente",
+      "idUsuario": "8acb",
+      "nombreUsuario": "Marcos12345"
     }
   ]
 }
