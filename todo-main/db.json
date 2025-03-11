@@ -11,20 +11,28 @@
       "nombreDeUsuario": "Pame6789",
       "email": "Pame6789@gmail.com",
       "password": "Pame6789"
+    },
+    {
+      "id": "8acb",
+      "nombreDeUsuario": "Marcos12345",
+      "email": "Marcos12345@gmail.com",
+      "password": "Marcos12345"
     }
   ],
   "tasks": [
     {
-      "id": "5476",
       "usuarioDeTarea": "abra",
-      "tarea": "hola",
-      "estado": "pendiente"
+      "tarea": "ftuft",
+      "estado": "completa",
+      "id": "5476"
     },
     {
-      "usuarioDeTarea": "abra",
-      "tarea": "adios",
-      "estado": "completa",
-      "id": "18b6"
+      "id": "08aa",
+      "usuarioDeTarea": "a90a",
+      "tarea": "abc",
+      "estado": "pendiente",
+      "idUsuario": "a90a",
+      "nombreUsuario": "Pame6789"
     }
   ]
 }

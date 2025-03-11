@@ -19,7 +19,7 @@ function TaskMakerByHazel({ tasks, setTasks }) {
     event.preventDefault(); // Prevengo que el formulario recargue la página al enviarse.
 
     // Obtengo el usuario actual desde el localStorage.
-    const usuarioActual = localStorage.getItem("usuarioActual");
+    const usuarioActual = localStorage.getItem("idUsuario");
 
     if (!usuarioActual) {
       // Si no encuentro un usuario autenticado, muestro una alerta y detengo el flujo.
@@ -48,7 +48,9 @@ function TaskMakerByHazel({ tasks, setTasks }) {
       const newTaskResponse = await CallsTasksByHazel.PostTasks(
         usuarioActual, // Usuario actual que está creando la tarea.
         newTask,       // Nombre de la tarea que se está añadiendo.
-        "pendiente"    // Las tareas nuevas siempre empiezan como pendientes.
+        "pendiente",    // Las tareas nuevas siempre empiezan como pendientes.
+        localStorage.getItem("idUsuario"),
+        localStorage.getItem("nombreUsuario")
       );
 
       // Actualizo el estado global "tasks" con la nueva tarea agregada.

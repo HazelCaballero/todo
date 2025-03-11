@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Importo el enrutador de React Router.
-import { UserProvider, UserContext } from "../contexts/UserContext.jsx"; // Importo el contexto de usuario.
+import { UserProvider, UserContext } from "../contexts/userContext.jsx"; // Importo el contexto de usuario.
 
 import AppToDoByHazel from "../pages/AppToDoByHazel"; // Página principal de la aplicación ToDo.
 import LogRegByHazel from "../pages/LogRegByHazel"; // Página para login y registro.

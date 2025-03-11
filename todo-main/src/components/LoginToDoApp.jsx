@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import CallsUsersByHAzel from "../services/CallsUsersByHazel";
 import Swal from "sweetalert2";
-import { UserContext } from "../contexts/UserContext"; // Aquí estoy importando el contexto para manejar el usuario actual.
+import { UserContext } from "../contexts/userContext.jsx"; // Aquí estoy importando el contexto para manejar el usuario actual.
 
 function LoginToDoApp() {
   // Configuré los estados locales para manejar los datos del usuario y la lista de usuarios.
@@ -66,6 +66,8 @@ function LoginToDoApp() {
     } else {
       // Si el usuario se encuentra, guardo su nombre en el contexto para usarlo en otras partes de la app.
       setCurrentUser(found.nombreDeUsuario);
+      localStorage.setItem("idUsuario",found.id)
+      localStorage.setItem("nombreUsuario",found.nombreDeUsuario)
       Swal.fire({
         icon: "success",
         title: "¡Bienvenido!",

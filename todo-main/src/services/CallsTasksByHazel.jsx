@@ -24,10 +24,10 @@ async function GetTasks() {
 }
 
 // Función para agregar una nueva tarea al servidor.
-async function PostTasks(usuarioDeTarea, tarea, estado) {
+async function PostTasks(usuarioDeTarea, tarea, estado,idUsuario,nombreUsuario) {
     try {
         // Construyo un objeto con los datos de la nueva tarea.
-        const taskData = { usuarioDeTarea, tarea, estado };
+        const taskData = { usuarioDeTarea, tarea, estado,idUsuario,nombreUsuario };
 
         // Hago una solicitud POST al endpoint para crear una tarea.
         const response = await fetch("http://localhost:3000/tasks", {
