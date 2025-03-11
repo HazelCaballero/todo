@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "89b7",
+      "nombreDeUsuario": "Hazel12345",
+      "email": "Hazel12345@gmail.com",
+      "password": "Hazel12345_"
+    },
+    {
+      "id": "a90a",
+      "nombreDeUsuario": "Pame6789",
+      "email": "Pame6789@gmail.com",
+      "password": "Pame6789"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "5476",
+      "usuarioDeTarea": "abra",
+      "tarea": "hola",
+      "estado": "pendiente"
+    },
+    {
+      "usuarioDeTarea": "abra",
+      "tarea": "adios",
+      "estado": "completa",
+      "id": "18b6"
+    }
+  ]
+}
