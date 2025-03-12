@@ -1,0 +1,120 @@
+/* Estilos para el contenedor de tareas */
+.TaskItemContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 320px;
+    scrollbar-width: thin; 
+    scrollbar-color: rgb(160, 81, 35, 0.9) rgb(58, 58, 58, 0.6);
+  }
+  
+  /* Estilo para cada tarea */
+  .TaskItem {
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 280px;
+    height: 170px;
+    background-color: rgb(58, 58, 58, 0.8);
+    color: rgb(230 230 222);
+    text-shadow: 
+    2px 2px 8px  rgb(28, 49, 13),  
+    -2px -2px 8px  rgb(28, 49, 13), 
+    2px -2px 8px  rgb(28, 49, 13),  
+    -2px 2px 8px  rgb(28, 49, 13);
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+  }
+  
+  /* Estilo para el checkbox */
+  .ItemCheckBox{
+    cursor: pointer;
+    background-color:rgb(245, 65, 104);
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    border-color: rgb(28, 49, 13);
+    border-style: solid;
+    border-radius: 75px;
+    position: relative;
+    bottom: 25px;
+  }
+
+  .ItemCheckBox:checked {
+    background-color: rgb(167, 254, 108);
+   }
+
+  .TaskName{
+    position: relative;
+    bottom: 30px;
+  }
+
+  .TaskName.pendiente {
+    color: rgb(245, 65, 104);
+    text-shadow: 
+    2px 2px 8px  rgb(28, 49, 13),  
+    -2px -2px 8px  rgb(28, 49, 13), 
+    2px -2px 8px  rgb(28, 49, 13),  
+    -2px 2px 8px  rgb(28, 49, 13);
+    font-weight: bold;
+  }
+  
+  .TaskName.completa {
+    color: rgb(167, 254, 108);
+    text-shadow: 
+        2px 2px 8px  rgb(28, 49, 13),  
+        -2px -2px 8px  rgb(28, 49, 13), 
+        2px -2px 8px  rgb(28, 49, 13),  
+        -2px 2px 8px  rgb(28, 49, 13);
+    font-weight: bold;
+  }
+  
+  /* Estilo para los botones */
+  .TaskItem button {
+    position: relative;
+    bottom: 10px;
+    padding: 5px 10px;
+    background-color: rgb(43 73 23);
+    color: rgb(230 230 222);
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(160, 81, 35);
+    cursor: pointer;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .TaskItem button:hover {
+    background-color: rgb(201, 243, 173);
+    border-color: rgb(160, 81, 35);
+    color: rgb(43 73 23);
+  }
+
+  .TaskTitle{
+    color:  rgb(219 223 190);
+    font-size: 25px;
+  }
+  
+  .MakerIcons{
+    position: relative;
+    right: 2px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .NoTaskStyle{
+    font-size: 30px;
+        color: rgb(230, 233, 212);
+        text-shadow: 
+        2px 2px 8px  rgb(28, 49, 13),  
+        -2px -2px 8px  rgb(28, 49, 13), 
+        2px -2px 8px  rgb(28, 49, 13),  
+        -2px 2px 8px  rgb(28, 49, 13);
+  }
+
+  @media only screen and (max-width: 768px) and (orientation: portrait) {
+       
+  }

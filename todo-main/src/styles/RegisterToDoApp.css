@@ -1,79 +1,82 @@
 .loginRegTitle{
     font-size: 50px;
-    position: relative;
-    top: 20px;
+    color: rgb(43 73 23);
+    text-shadow: 
+    2px 2px 18px rgb(230, 233, 212),  
+    -2px -2px 18px rgb(230, 233, 212), 
+    2px -2px 18px rgb(230, 233, 212),  
+    -2px 2px 18px rgb(230, 233, 212); /* Sombra del texto */
 }
 
 .labelRegStyle{
     font-size: 30px;
+    color: rgb(230, 233, 212);
+    text-shadow: 
+    2px 2px 8px  rgb(28, 49, 13),  
+    -2px -2px 8px  rgb(28, 49, 13), 
+    2px -2px 8px  rgb(28, 49, 13),  
+    -2px 2px 8px  rgb(28, 49, 13); /* Sombra del texto */
 }
 
 .inputRegStyle{
     text-align: center;
     font-size: 20px;
     margin: 5px;
+    background-color: rgb(160, 81, 35);
+    color: rgb(219 223 190);
+    padding: 2px 6px;
+    border-radius: 75px;
+    border-style: solid;
+    border-color: rgb(219 223 190);
+    border-width: 2px;
 }
 
 .inputRegStyle:hover{
-    background-color: rgb(212, 253, 245);
+    background-color: rgb(219 223 190);
+    color: rgb(43 73 23);
+    border-style: solid;
+    border-color: rgb(28, 49, 13);
+    border-width: 2px;
 }
 
 .inputRegStyle::placeholder{
     font-size: 17px;
+    color: rgb(219 223 190);
 }
 
 .btnAddRegStyle{
     font-size: 15px;
-    margin: 5px;
-    padding: 5px;
+    margin: 15px;
+    padding: 8px 15px;
+    border-radius: 75px;
+    background-color: rgb(43 73 23);
+    color: rgb(230, 233, 212);
+    border-style: solid;
+    border-color: rgb(219 223 190);
+    border-width: 2px;
 }
 
 .btnAddRegStyle:hover{
-    background-color: rgb(212, 253, 245);
+    background-color:rgb(201, 243, 173);
+    color: rgb(43 73 23);
+    border-color: rgb(43 73 23)
 }
 
 .RegisterToDoContainer{
-    background-color: aquamarine;
+    background-color: rgb(67, 159, 128, 0.8);
     width: 350px;
     justify-content: center;
     justify-items: center;
     position: relative;
-    left: 180px;
+    left: 140px;
     border-radius: 5%;
+    border-style: groove;
+    border-color: rgb(160, 81, 35);
+    border-width: 5px;
   }
 
 @media only screen and (max-width: 768px) and (orientation: portrait) {
-    /* Estilos para pantallas en orientación vertical */
-    .loginRegTitle{
-        font-size: 35px;
-    }
-    
-    .labelRegStyle{
-        font-size: 25px;
-    }
-    
-    .inputRegStyle{
-        text-align: center;
-        font-size: 20px;
-        margin: 3px;
-    }
-    
-    .inputRegStyle:hover{
-        background-color: rgb(212, 253, 245);
-    }
-    
-    .inputRegStyle::placeholder{
-        font-size: 17px;
-    }
-    
-    .btnAddRegStyle{
-        font-size: 15px;
-        margin: 3px;
-    }
-    
-    .btnAddRegStyle:hover{
-        background-color: rgb(212, 253, 245);
-    }
+   
   }
 
   

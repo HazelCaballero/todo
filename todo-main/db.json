@@ -21,50 +21,92 @@
   ],
   "tasks": [
     {
-      "id": "d52b",
       "usuarioDeTarea": "a90a",
       "tarea": "como",
       "estado": "pendiente",
-      "idUsuario": "a90a",
-      "nombreUsuario": "Pame6789"
+      "id": "d52b"
     },
     {
       "usuarioDeTarea": "a90a",
       "tarea": "estas",
-      "estado": "completa",
+      "estado": "pendiente",
       "id": "25f8"
     },
     {
-      "id": "e651",
+      "usuarioDeTarea": "a90a",
+      "tarea": "?",
+      "estado": "completa",
+      "id": "1736"
+    },
+    {
+      "id": "7b1c",
       "usuarioDeTarea": "89b7",
-      "tarea": "fyjtf",
+      "tarea": "Tarea de ingles",
       "estado": "pendiente",
       "idUsuario": "89b7",
       "nombreUsuario": "Hazel12345"
     },
     {
-      "id": "dba1",
+      "id": "3ec8",
       "usuarioDeTarea": "89b7",
-      "tarea": "ftvgc",
+      "tarea": "español",
       "estado": "pendiente",
       "idUsuario": "89b7",
       "nombreUsuario": "Hazel12345"
     },
     {
-      "id": "5d51",
+      "id": "bcce",
       "usuarioDeTarea": "89b7",
-      "tarea": "d dvf",
+      "tarea": "mate",
       "estado": "pendiente",
       "idUsuario": "89b7",
       "nombreUsuario": "Hazel12345"
     },
     {
-      "id": "63bb",
+      "id": "af44",
+      "usuarioDeTarea": "89b7",
+      "tarea": "estudios",
+      "estado": "pendiente",
+      "idUsuario": "89b7",
+      "nombreUsuario": "Hazel12345"
+    },
+    {
+      "id": "0987",
+      "usuarioDeTarea": "89b7",
+      "tarea": "python",
+      "estado": "pendiente",
+      "idUsuario": "89b7",
+      "nombreUsuario": "Hazel12345"
+    },
+    {
+      "id": "1a1b",
+      "usuarioDeTarea": "89b7",
+      "tarea": "js",
+      "estado": "pendiente",
+      "idUsuario": "89b7",
+      "nombreUsuario": "Hazel12345"
+    },
+    {
+      "id": "f3ab",
+      "usuarioDeTarea": "89b7",
+      "tarea": "proyecto",
+      "estado": "pendiente",
+      "idUsuario": "89b7",
+      "nombreUsuario": "Hazel12345"
+    },
+    {
+      "id": "4742",
       "usuarioDeTarea": "8acb",
-      "tarea": "ewf",
+      "tarea": "Hoy",
       "estado": "pendiente",
       "idUsuario": "8acb",
       "nombreUsuario": "Marcos12345"
+    },
+    {
+      "usuarioDeTarea": "8acb",
+      "tarea": "Ayer",
+      "estado": "completa",
+      "id": "d8bc"
     }
   ]
 }

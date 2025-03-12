@@ -2,11 +2,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    background-color: rgb(212, 253, 245);
-    padding-bottom: 40px;
-    margin-top: 40px;
-    border-radius: 75px;
 }
 body{
-    background-color: rgb(55, 78, 73);
+    background-image: url(../img/BackgroundAppToDoCut.jpg); /* Imagen de fondo */
+    background-repeat: no-repeat; /* No se repite la imagen */
+    background-size: cover; /* La imagen cubre todo el contenedor */
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+       
 }

@@ -19,7 +19,6 @@ function TaskItemByHazel({ tasks, setTasks }) {
       setTasks((prevTasks) =>
         prevTasks.map((t) => (t.id === task.id ? updatedTask : t))
       );
-
     } catch (error) {
       // Si algo falla, muestro un mensaje de error con SweetAlert.
       Swal.fire({
@@ -104,40 +103,38 @@ function TaskItemByHazel({ tasks, setTasks }) {
     }
   }
 
- 
-  const porUsario = tasks.filter(task => task.usuarioDeTarea === localStorage.getItem("idUsuario"))
+  const porUsario = tasks.filter(task => task.usuarioDeTarea === localStorage.getItem("idUsuario"));
 
   console.log(porUsario);
-  
+
   return (
     <div className="TaskItemContainer">
       {/* Verifico si hay tareas en la lista */}
       {
-      porUsario.length >= 0 ? (
-        porUsario.map((task)=>{
-          return(
-        // Recorro la lista de tareas para mostrar cada una.
-          <div className="TaskItem" key={task.id}>
-           <p>{task.tarea}</p>
-            {/* Checkbox para cambiar el estado de la tarea */}
-            <input
-              type="checkbox"
-              checked={tasks.estado === "completa"} // Marcado si la tarea está completa.
-              onChange={() => toggleTaskCompletion(task)} // Cambia el estado al hacer clic.
-            />
-            {/* Nombre de la tarea con estilo según su estado */}
-            <span className={`TaskName ${task.estado}`}>{task.tarea}</span>
-            {/* Botón para editar la tarea */}
-            <button onClick={() => editTask(task)}>Editar</button>
-            {/* Botón para eliminar la tarea */}
-            <button onClick={() => deleteTask(task.id)}>Eliminar</button>
-          </div>
-          )
-      })
-        )
-        : (
+        porUsario.length > 0 ? (
+          porUsario.map((task) => {
+            return (
+              <div className="TaskItem" key={task.id}>
+                <p className="TaskTitle">{task.tarea}</p>
+                {/* Checkbox para cambiar el estado de la tarea */}
+                <input className="ItemCheckBox"
+                  type="checkbox"
+                  checked={task.estado === "completa"} // Marcado si la tarea está completa.
+                  onChange={() => toggleTaskCompletion(task)} // Cambia el estado al hacer clic.
+                >
+                </input>
+                {/* Nombre de la tarea con estilo según su estado */}
+                <span className={`TaskName ${task.estado}`}>{task.estado}</span> <br />
+                {/* Botón para editar la tarea */}
+                <button onClick={() => editTask(task)}> <img className="MakerIcons" src="../src/img/editar.png" alt="icono editar" /> </button>
+                {/* Botón para eliminar la tarea */}
+                <button onClick={() => deleteTask(task.id)}> <img className="MakerIcons" src="../src/img/eliminar.png" alt="icono eliminar" /> </button>
+              </div>
+            )
+          })
+        ) : (
           // Si no hay tareas, muestro un mensaje.
-          <p>No tienes tareas pendientes. ¡Crea una nueva tarea!</p>
+          <p className="NoTaskStyle">No tienes tareas pendientes. ¡Crea una nueva tarea!</p>
         )
       }
     </div>

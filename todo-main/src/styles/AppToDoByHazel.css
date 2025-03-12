@@ -1,0 +1,39 @@
+.AppPageContainer{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 200px 1fr;
+grid-template-areas: 
+"TMakerContainer TCounterContainer"
+"TItemContainer TItemContainer";
+}
+
+.TMakerContainer{
+    grid-area: TMakerContainer;
+    bottom: 5px;
+}
+
+.TCounterContainer{
+    grid-area: TCounterContainer;
+    position: relative;
+    bottom: 10px;
+}
+
+.TItemContainer{
+    grid-area: TItemContainer;
+    padding: 20px;
+   background-color: rgb(67, 159, 128, 0.5); 
+   border-radius: 10px;
+   border-style: solid;
+   border-color: rgb(160, 81, 35);
+   border-width: 3px;
+   position: relative;
+   bottom: 30px;
+}
+
+body{
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+       
+}

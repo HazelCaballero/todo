@@ -32,13 +32,15 @@ function AppToDoByHazel() {
   return (
     <div className="AppPageContainer">
       {/* Aquí incluyo el componente que permite crear nuevas tareas. */}
-      <TaskMakerByHazel tasks={tasks} setTasks={setTasks} />
+      <div className="TMakerContainer"><TaskMakerByHazel tasks={tasks} setTasks={setTasks} /></div>
+      
+      {/* Este componente muestra un resumen del estado de las tareas: totales, pendientes y completadas. */}
+      <div className="TCounterContainer"><TasksCounterByHazel tasks={tasks} /></div>
 
       {/* Este componente se encarga de mostrar las tareas existentes y gestionarlas (editar, eliminar, completar). */}
-      <TaskItemByHazel tasks={tasks} setTasks={setTasks} />
+      <div className="TItemContainer"><TaskItemByHazel tasks={tasks} setTasks={setTasks} /></div>
 
-      {/* Este componente muestra un resumen del estado de las tareas: totales, pendientes y completadas. */}
-      <TasksCounterByHazel tasks={tasks} />
+     
     </div>
   );
 }

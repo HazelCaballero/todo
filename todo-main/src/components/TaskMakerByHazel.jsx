@@ -79,16 +79,16 @@ function TaskMakerByHazel({ tasks, setTasks }) {
   return (
     <div className="TaskMakerContainer">
       {/* Etiqueta para el campo de entrada */}
-      <label htmlFor="task">Nueva tarea</label>
+      <label className="MakerTitle" htmlFor="task">Nueva tarea</label> <br />
       {/* Campo de texto donde el usuario escribe su tarea */}
-      <input
+      <input className="MakerInputStyle"
         type="text"
         placeholder="Ejemplo: Tarea de Inglés" // Ayuda para indicar cómo escribir una tarea.
         value={newTask} // Enlazo el valor al estado "newTask".
         onChange={handleInputChange} // Llamo a la función handleInputChange cuando el usuario escribe.
       />
       {/* Botón para agregar la tarea, deshabilitado si la tarea está en proceso */}
-      <button onClick={addTask} disabled={isSubmitting}>
+      <button className="BtnMaker" onClick={addTask} disabled={isSubmitting}>
         {isSubmitting ? "Agregando..." : "Agregar"} {/* Cambio el texto según el estado */}
       </button>
     </div>

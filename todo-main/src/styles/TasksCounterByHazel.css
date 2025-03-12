@@ -1,0 +1,27 @@
+.TasksCounterContainer{
+    background-color: rgb(209, 114, 79, 0.4);
+    justify-self: flex-end;
+    padding: 10px 30px;
+    color: rgb(230, 255, 213);
+    text-shadow: 
+    2px 2px 18px rgb(70, 22, 5),  
+    -2px -2px 18px rgb(70, 22, 5), 
+    2px -2px 18px rgb(70, 22, 5),  
+    -2px 2px 18px rgb(70, 22, 5);
+    font-size: 18px;
+    border-radius: 35px;
+    border-style: solid;
+    border-color:rgb(160, 81, 35);
+    border-width: 3px;
+    font-weight: bold;
+}
+
+.CounterNumber{
+    background-color: rgb(43 73 23);
+    padding: 5px 10px;
+    border-radius: 95px;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+       
+}
