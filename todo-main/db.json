@@ -107,6 +107,12 @@
       "tarea": "Ayer",
       "estado": "completa",
       "id": "d8bc"
+    },
+    {
+      "usuarioDeTarea": "8acb",
+      "tarea": "Otro dia",
+      "estado": "completa",
+      "id": "2ab5"
     }
   ]
 }
