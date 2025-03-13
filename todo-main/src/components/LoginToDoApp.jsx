@@ -60,7 +60,11 @@ function LoginToDoApp() {
       Swal.fire({
         icon: "error",
         title: "Autenticación fallida",
-        text: "Usuario o contraseña incorrectos. Inténtalo nuevamente."
+        text: "Usuario o contraseña incorrectos. Inténtalo nuevamente.",
+        customClass: {
+          popup: "mi-popup", 
+          title: "mi-titulo", 
+        }
       });
     } else {
       // Si el usuario se encuentra, guardo su nombre en el contexto para usarlo en otras partes de la app.

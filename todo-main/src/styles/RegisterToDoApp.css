@@ -22,7 +22,7 @@
     text-align: center;
     font-size: 20px;
     margin: 5px;
-    background-color: rgb(160, 81, 35);
+    background-color: #a27154;
     color: rgb(219 223 190);
     padding: 2px 6px;
     border-radius: 75px;
@@ -63,20 +63,24 @@
 }
 
 .RegisterToDoContainer{
-    background-color: rgb(67, 159, 128, 0.8);
+    background-color: rgba(103, 176, 152, 0.6);
     width: 350px;
     justify-content: center;
     justify-items: center;
     position: relative;
     left: 140px;
     border-radius: 5%;
-    border-style: groove;
+    border-style: solid;
     border-color: rgb(160, 81, 35);
     border-width: 5px;
   }
 
-@media only screen and (max-width: 768px) and (orientation: portrait) {
-   
+  .mi-popup{
+background-color: rgba(103, 176, 152, 0.9);  /* Fondo de la ventana */
+border-radius: 10px;        /* Bordes redondeados */
+padding: 20px;              /* Espaciado interno */
   }
 
-  
+  .mi-titulo{
+color: bisque;
+  }

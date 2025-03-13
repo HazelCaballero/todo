@@ -54,7 +54,7 @@ function TaskItemByHazel({ tasks, setTasks }) {
 
   // Esta función permite editar el nombre de una tarea.
   async function editTask(task) {
-    // Usé SweetAlert para mostrar un cuadro de entrada y pedir al usuario un nuevo nombre.
+    // Use un SweetAlert para mostrar un cuadro de entrada y pedir al usuario una nueva tarea.
     const { value: newTaskName } = await Swal.fire({
       title: "Editar tarea",
       input: "text", // Campo de texto para editar el nombre.
@@ -63,38 +63,47 @@ function TaskItemByHazel({ tasks, setTasks }) {
       showCancelButton: true,
       confirmButtonText: "Guardar",
       cancelButtonText: "Cancelar",
-    });
+      
+      // Estilos personalizados:
+      customClass: {
+        popup: 'custom-popup',  // Clase para la ventana emergente
+        title: 'custom-title',  // Clase para el título
+        input: 'custom-input',  // Clase para el input de texto
+        inputLabel: 'custom-label',
+        confirmButton: 'custom-confirm-button',  // Clase para el botón de confirmar
+        cancelButton: 'custom-cancel-button',  // Clase para el botón de cancelar
 
-    // Si el usuario no escribió nada o ingresó un valor vacío, muestro una advertencia.
+      },
+
+    });
+  
+    // Si el nombre de la tarea está vacío, mostramos una advertencia:
     if (!newTaskName || !newTaskName.trim()) {
       Swal.fire({
         icon: "warning",
         title: "Validación fallida",
         text: "El nombre de la tarea no puede estar vacío.",
       });
-      return; // Salgo de la función si el nombre no es válido.
+      return;
     }
-
+  
     try {
       // Llamo a la API para actualizar el nombre de la tarea.
       const updatedTask = await CallsTasksByHazel.UpdateTasks(
-        task.usuarioDeTarea, // Usuario al que pertenece la tarea.
-        newTaskName,         // Nuevo nombre que se ingresó.
-        task.estado,         // Estado actual de la tarea.
-        task.id              // ID único de la tarea.
+        task.usuarioDeTarea,
+        newTaskName,
+        task.estado,
+        task.id
       );
-      // Actualizo la lista de tareas local para reflejar el nuevo nombre.
       setTasks((prevTasks) =>
         prevTasks.map((t) => (t.id === task.id ? updatedTask : t))
       );
-      // Confirmo al usuario que la tarea fue actualizada.
       Swal.fire({
         icon: "success",
         title: "Tarea actualizada",
         text: `La tarea ha sido renombrada a "${newTaskName}".`
       });
     } catch (error) {
-      // Si ocurre un error, notifico al usuario.
       Swal.fire({
         icon: "error",
         title: "Error al editar tarea",
@@ -102,6 +111,7 @@ function TaskItemByHazel({ tasks, setTasks }) {
       });
     }
   }
+  
 
   const porUsario = tasks.filter(task => task.usuarioDeTarea === localStorage.getItem("idUsuario"));
 

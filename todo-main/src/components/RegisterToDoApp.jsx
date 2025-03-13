@@ -56,6 +56,10 @@ function RegisterToDoApp() {
         icon: "warning",
         title: "Validación fallida",
         text: validation.message,
+        customClass: {
+          popup: "mi-popup", 
+          title: "mi-titulo",
+        }
       });
       return; // Detengo la ejecución si hay errores en la validación.
     }
@@ -82,8 +86,12 @@ function RegisterToDoApp() {
       Swal.fire({
         icon: "error",
         title: "Error al registrar",
-        text: "Hubo un problema al intentar registrar el usuario. Inténtalo nuevamente."
-      });
+        text: "Hubo un problema al intentar registrar el usuario. Inténtalo nuevamente.",
+        customClass: {
+          popup: "mi-popup", // Clase para el contenedor principal
+          title: "mi-titulo", // Clase para el título
+        }
+      });      
     } finally {
       setIsSubmitting(false); // Siempre habilito el botón al final del proceso.
     }

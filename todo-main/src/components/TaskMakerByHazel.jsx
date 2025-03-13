@@ -4,25 +4,21 @@ import CallsTasksByHazel from "../services/CallsTasksByHazel";
 import "../styles/TaskMakerByHazel.css";
 
 function TaskMakerByHazel({ tasks, setTasks }) {
-  // Este estado maneja la tarea nueva que el usuario va a ingresar.
-  const [newTask, setNewTask] = useState("");
-  // Uso este estado para deshabilitar el botón de agregar mientras se procesa la solicitud.
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [newTask, setNewTask] = useState(""); // Estado para la nueva tarea
+  const [isSubmitting, setIsSubmitting] = useState(false); // Estado para evitar múltiples envíos
 
-  // Esta función se encarga de capturar lo que el usuario escribe en el campo de texto.
+  // Maneja el cambio en el campo de entrada
   function handleInputChange(event) {
-    setNewTask(event.target.value); // Cada vez que el usuario escribe, actualizo el estado "newTask".
+    setNewTask(event.target.value);
   }
 
-  // Esta función maneja el flujo para agregar una nueva tarea.
+  // Maneja la adición de la tarea
   async function addTask(event) {
-    event.preventDefault(); // Prevengo que el formulario recargue la página al enviarse.
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del evento
 
-    // Obtengo el usuario actual desde el localStorage.
     const usuarioActual = localStorage.getItem("idUsuario");
 
     if (!usuarioActual) {
-      // Si no encuentro un usuario autenticado, muestro una alerta y detengo el flujo.
       Swal.fire({
         icon: "error",
         title: "Error",
@@ -31,29 +27,26 @@ function TaskMakerByHazel({ tasks, setTasks }) {
       return;
     }
 
-    // Valido que el campo de la nueva tarea no esté vacío.
     if (!newTask.trim()) {
       Swal.fire({
         icon: "warning",
         title: "Validación fallida",
-        text: "Ingrese texto.", // Mensaje para alertar al usuario.
+        text: "Ingrese texto.",
       });
       return;
     }
 
-    setIsSubmitting(true); // Cambio el estado para evitar múltiples envíos mientras se procesa.
+    setIsSubmitting(true);
 
     try {
-      // Llamo al servicio para agregar la nueva tarea, enviando el usuario, el texto de la tarea y el estado inicial (pendiente).
       const newTaskResponse = await CallsTasksByHazel.PostTasks(
-        usuarioActual, // Usuario actual que está creando la tarea.
-        newTask,       // Nombre de la tarea que se está añadiendo.
-        "pendiente",    // Las tareas nuevas siempre empiezan como pendientes.
+        usuarioActual,
+        newTask,
+        "pendiente", // Estado inicial
         localStorage.getItem("idUsuario"),
         localStorage.getItem("nombreUsuario")
       );
 
-      // Actualizo el estado global "tasks" con la nueva tarea agregada.
       setTasks([...tasks, newTaskResponse]);
       Swal.fire({
         icon: "success",
@@ -62,32 +55,37 @@ function TaskMakerByHazel({ tasks, setTasks }) {
         confirmButtonText: "Entendido"
       });
 
-      setNewTask(""); // Limpio el campo de texto después de agregar la tarea.
+      setNewTask(""); // Limpiar el campo de texto después de agregar la tarea
     } catch (error) {
-      // Si ocurre un error durante la llamada a la API, muestro un mensaje al usuario.
       Swal.fire({
         icon: "error",
         title: "Error al agregar tarea",
         text: "Hubo un problema al intentar agregar la tarea. Intenta nuevamente."
       });
     } finally {
-      // Finalmente, habilito el botón nuevamente sin importar el resultado.
-      setIsSubmitting(false);
+      setIsSubmitting(false); // Habilitar nuevamente el botón
+    }
+  }
+
+  // Detectar tecla Enter y llamar a la función addTask
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      addTask(event); // Llamar la misma función de agregar tarea
     }
   }
 
   return (
     <div className="TaskMakerContainer">
       {/* Etiqueta para el campo de entrada */}
-      <label className="MakerTitle" htmlFor="task">Nueva tarea</label> <br />
-      {/* Campo de texto donde el usuario escribe su tarea */}
-      <input className="MakerInputStyle"
+      <label className="MakerTitle" htmlFor="task">Nueva tarea</label><br />
+      <input
+        className="MakerInputStyle"
         type="text"
-        placeholder="Ejemplo: Tarea de Inglés" // Ayuda para indicar cómo escribir una tarea.
-        value={newTask} // Enlazo el valor al estado "newTask".
-        onChange={handleInputChange} // Llamo a la función handleInputChange cuando el usuario escribe.
+        placeholder="Ejemplo: Tarea de Inglés"
+        value={newTask}
+        onChange={handleInputChange} // Llamo a la función handleInputChange cuando el usuario escribe
+        onKeyDown={handleKeyDown} // Detecta la tecla Enter
       />
-      {/* Botón para agregar la tarea, deshabilitado si la tarea está en proceso */}
       <button className="BtnMaker" onClick={addTask} disabled={isSubmitting}>
         {isSubmitting ? "Agregando..." : "Agregar"} {/* Cambio el texto según el estado */}
       </button>
